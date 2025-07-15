@@ -9,10 +9,51 @@ export default function Contact() {
     company: "",
     message: ""
   });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setStatus('loading');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
+
+      setStatus('success');
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        message: ''
+      });
+
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setStatus('idle');
+      }, 5000);
+    } catch (error) {
+      setStatus('error');
+      setErrorMessage(error instanceof Error ? error.message : 'Failed to send message');
+      
+      // Reset error message after 5 seconds
+      setTimeout(() => {
+        setStatus('idle');
+        setErrorMessage('');
+      }, 5000);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -157,10 +198,34 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full px-6 py-3 bg-bsc-yellow text-bsc-dark font-semibold rounded-lg hover:bg-bsc-yellow-bright transition-all duration-200 transform hover:scale-[1.02]"
+                  disabled={status === 'loading'}
+                  className={`w-full px-6 py-3 font-semibold rounded-lg transition-all duration-200 transform hover:scale-[1.02] ${
+                    status === 'loading' 
+                      ? 'bg-gray-600 cursor-not-allowed' 
+                      : status === 'success'
+                      ? 'bg-green-600 text-white'
+                      : status === 'error'
+                      ? 'bg-red-600 text-white'
+                      : 'bg-bsc-yellow text-bsc-dark hover:bg-bsc-yellow-bright'
+                  }`}
                 >
-                  Send Message
+                  {status === 'loading' ? 'Sending...' : 
+                   status === 'success' ? '✓ Message Sent!' :
+                   status === 'error' ? '✗ Failed to Send' :
+                   'Send Message'}
                 </button>
+                
+                {status === 'error' && errorMessage && (
+                  <p className="mt-2 text-sm text-red-400 text-center">
+                    {errorMessage}
+                  </p>
+                )}
+                
+                {status === 'success' && (
+                  <p className="mt-2 text-sm text-green-400 text-center">
+                    Thank you for your message. We'll get back to you soon!
+                  </p>
+                )}
               </form>
             </div>
           </div>
