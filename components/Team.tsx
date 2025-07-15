@@ -12,7 +12,7 @@ const teamMembers: TeamMember[] = [
     bio: [
       "Co-Founder and Managing Partner of Coral Capital, a DeFi market neutral fund. GP sold to DNA (Oct 2024)",
       "CIO of Esoteric Strategies LP, a Crypto Arbitrage fund",
-      "Co-Founder of Marion Investment Management, a litigation finance fund with peak AUM of $1.2B",
+      "Co-Founder of Merion Investment Management, a litigation finance fund with peak AUM of $1.2B",
       "Co-Founder of Integrated Ag, an Agriculture PE fund with peak AUM of $270M",
       "Co-Founder of Blue Sand Securities, a placement agent who raised >$15B for single manager alternative investment funds",
       "Co-Founder of Innovation Shares, an ETF sponsor providing exposure to cutting edge themes using AI and Natural Language Processing, including NYSE: KOIN one of the first Blockchain ETFs, and NYSE: THCX one of the first Cannabis ETFs",
