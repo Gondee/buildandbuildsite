@@ -73,25 +73,6 @@ export default function Strategy() {
           ))}
         </div>
 
-        <div className="glass-effect rounded-xl p-8 md:p-12">
-          <h3 className="text-2xl font-bold text-center mb-8 text-bsc-yellow">
-            Technical Infrastructure
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold text-white mb-2">99.9%</div>
-              <div className="text-gray-400">Uptime SLA</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-white mb-2">&lt;50ms</div>
-              <div className="text-gray-400">Trade Execution</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-white mb-2">256-bit</div>
-              <div className="text-gray-400">Encryption</div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
