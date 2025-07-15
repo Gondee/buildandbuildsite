@@ -51,20 +51,6 @@ export default function BNBStats() {
     return formatPrice(num);
   };
 
-  const formatLastUpdated = (timestamp: number) => {
-    const now = Date.now();
-    const diff = now - timestamp;
-    const minutes = Math.floor(diff / 60000);
-    
-    if (minutes < 1) {
-      return 'Just now';
-    } else if (minutes === 1) {
-      return '1 minute ago';
-    } else {
-      return `${minutes} minutes ago`;
-    }
-  };
-
   if (loading) {
     return (
       <>
@@ -106,7 +92,7 @@ export default function BNBStats() {
           <div className="text-3xl font-bold text-bsc-yellow transition-transform duration-200 group-hover:scale-105">
             {formatLargeNumber(data.marketCap)}
           </div>
-          <div className="text-gray-400 text-sm mt-1">Market Cap</div>
+          <div className="text-gray-400 text-sm mt-1">BNB Market Cap</div>
         </div>
         <div className="group">
           <div className="text-3xl font-bold text-bsc-yellow transition-transform duration-200 group-hover:scale-105">
@@ -115,11 +101,46 @@ export default function BNBStats() {
           <div className="text-gray-400 text-sm mt-1">24h Volume (USD)</div>
         </div>
       </div>
-      <div className="text-center mt-4">
-        <p className="text-xs text-gray-500">
-          Last refresh from CMC: {formatLastUpdated(data.lastUpdated)}
-        </p>
-      </div>
     </>
   );
+}
+
+export function formatLastUpdated(timestamp: number | null) {
+  if (!timestamp) return '';
+  
+  const now = Date.now();
+  const diff = now - timestamp;
+  const minutes = Math.floor(diff / 60000);
+  
+  if (minutes < 1) {
+    return 'Just now';
+  } else if (minutes === 1) {
+    return '1 minute ago';
+  } else {
+    return `${minutes} minutes ago`;
+  }
+}
+
+export function useLastUpdated() {
+  const [lastUpdated, setLastUpdated] = useState<number | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/api/bnb-stats');
+        const result = await response.json();
+        if (result.lastUpdated) {
+          setLastUpdated(result.lastUpdated);
+        }
+      } catch (error) {
+        console.error('Error fetching last updated time:', error);
+      }
+    };
+
+    fetchData();
+    const interval = setInterval(fetchData, 30000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return lastUpdated;
 }
