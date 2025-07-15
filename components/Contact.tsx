@@ -223,7 +223,7 @@ export default function Contact() {
                 
                 {status === 'success' && (
                   <p className="mt-2 text-sm text-green-400 text-center">
-                    Thank you for your message. We'll get back to you soon!
+                    Thank you for your message. We&apos;ll get back to you soon!
                   </p>
                 )}
               </form>

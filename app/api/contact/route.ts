@@ -54,6 +54,8 @@ export async function POST(request: Request) {
     }
 
     // Option 2: Use Resend (modern email API)
+    // Commented out unless you install resend: npm install resend
+    /*
     if (process.env.RESEND_API_KEY) {
       const { Resend } = await import('resend');
       const resend = new Resend(process.env.RESEND_API_KEY);
@@ -74,6 +76,7 @@ export async function POST(request: Request) {
         `,
       });
     }
+    */
 
     return NextResponse.json(
       { message: 'Message sent successfully' },
