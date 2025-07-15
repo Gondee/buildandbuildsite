@@ -1,7 +1,7 @@
 
-import dynamic from "next/dynamic";
+"use client";
 
-const BNBStats = dynamic(() => import("./BNBStats"), { ssr: false });
+import BNBStats from "./BNBStats";
 
 export default function Hero() {
   return (
