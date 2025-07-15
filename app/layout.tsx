@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/bnb-logo.svg",
+        url: "/og",
         width: 1200,
         height: 630,
         alt: "Build and Build Co - BNB Logo",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Build and Build Co - BNB Access for US Investors",
     description: "Institutional-grade access to Binance Smart Chain in the United States",
-    images: ["/bnb-logo.svg"],
+    images: ["/og"],
   },
 };
 
