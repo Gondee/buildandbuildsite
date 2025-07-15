@@ -101,7 +101,11 @@ export default function Team() {
                         src={member.image}
                         alt={member.name}
                         fill
-                        className={`object-cover ${member.name.includes('Patrick') ? 'object-[center_35%]' : 'object-center'}`}
+                        className={`object-cover ${
+                          member.name.includes('Patrick') ? 'object-[50%_20%]' : 
+                          member.name.includes('Joshua') ? 'object-[20%_50%]' : 
+                          'object-center'
+                        }`}
                         sizes="(max-width: 768px) 96px, 96px"
                       />
                     </div>
