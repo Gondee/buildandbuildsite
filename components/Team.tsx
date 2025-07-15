@@ -56,16 +56,19 @@ const teamMembers: TeamMember[] = [
   {
     name: "James Haft",
     bio: [
-      "Serial entrepreneur with over 35 years experience focused on building companies with disruptive digitization of information",
-      "Globally recognized thought leader in Distributed Ledger and Decentralization technologies",
-      "Experience in public, private and emerging capital markets. Founder at the Decentralized AI Society (www.DAIS.global), Chairman and founder of ALT-X ASA, the first publicly-listed Web3 company",
-      "Chairman and co-founder of OnealCoin, first company to tokenize carbon credits",
-      "Founder of PALcapital in 1996. Advisory and venture investment firm dedicated to DLT and AI businesses",
-      "Former Managing Director of Asian Investment Banking at Bear Stearns, responsible for the first listing of a Chinese company on the NYSE",
-      "Former MD of emerging markets investment banking at Canaccord",
-      "Former head of Latin American Equity Capital Markets at NatWest",
-      "Co-founder of CryptoMondays, one of the largest and best known global meetups for Cryptocurrencies and DLT globally",
-      "AB in Economics from Vassar College. JD/MBA from Emory University"
+      "Serial entrepreneur with over 35 years of experience building companies based on the digitization of information",
+      "Globally recognized thought leader in Distributed Ledger, AI and Decentralization technologies with experience in public, private and emerging capital markets.",
+      "Founder of the Decentralized AI Society (www.DAIS.global)",
+      "Chairman and founder of DLTX ASA, the first publicly-listed Web3 company",
+      "Chairman and co-founder of ClimateCoin, the first company to tokenize carbon credits",
+      "Board member of Blockchain Moon Acquisition Corp, a Nasdaq-listed SPAC.",
+      "Founder of PALcapital, an advisory and investment firm dedicated to Digital, DLT and AI industries",
+      "Former Managing Director of Asian Investment Banking at BearStearns",
+      "Responsible for the first listing of a Chinese company on the NYSE",
+      "Former MD of emerging markets investment banking at FurmanSelz",
+      "Former MD of Latin American Equity Capital Markets at INGbarings",
+      "Co-founder of CryptoMondays, one of the largest and best-known global meetups for Cryptocurrencies and DLT globally",
+      "AB in Economics from Vassar College. JD/MBA from Emory University."
     ],
     image: "/team/james.png",
     linkedin: "https://www.linkedin.com/in/jameshaft/"
