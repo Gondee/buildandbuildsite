@@ -3,6 +3,23 @@ import { ImageResponse } from 'next/og';
 export const runtime = 'edge';
 
 export async function GET() {
+  // Fetch current BNB stats
+  let bnbPrice = '$723.45';
+  let marketCap = '$112.5B';
+  let volume24h = '$1.8B';
+  
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'https://buildandbuildsite.vercel.app'}/api/bnb-stats`);
+    if (response.ok) {
+      const data = await response.json();
+      bnbPrice = `$${data.price.toFixed(2)}`;
+      marketCap = data.marketCap >= 1e9 ? `$${(data.marketCap / 1e9).toFixed(1)}B` : `$${(data.marketCap / 1e6).toFixed(1)}M`;
+      volume24h = data.volume24h >= 1e9 ? `$${(data.volume24h / 1e9).toFixed(1)}B` : `$${(data.volume24h / 1e6).toFixed(1)}M`;
+    }
+  } catch (error) {
+    // Use default values if fetch fails
+  }
+
   return new ImageResponse(
     (
       <div
@@ -15,9 +32,10 @@ export async function GET() {
           justifyContent: 'center',
           backgroundColor: '#0B0E11',
           backgroundImage: 'radial-gradient(circle at 50% 50%, #1A1D1F 0%, #0B0E11 100%)',
+          position: 'relative',
         }}
       >
-        {/* Hexagon pattern effect */}
+        {/* Subtle hexagon pattern */}
         <div
           style={{
             position: 'absolute',
@@ -25,36 +43,38 @@ export async function GET() {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: `repeating-linear-gradient(
-              60deg,
-              transparent,
-              transparent 35px,
-              rgba(243, 186, 47, 0.03) 35px,
-              rgba(243, 186, 47, 0.03) 70px
-            )`,
+            opacity: 0.03,
+            backgroundImage: `repeating-linear-gradient(60deg, transparent, transparent 40px, #F3BA2F 40px, #F3BA2F 41px)`,
           }}
         />
         
-        {/* Logo */}
+        {/* Logo with glow */}
         <div
           style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            width: 200,
-            height: 200,
+            width: 140,
+            height: 140,
             borderRadius: '50%',
-            background: 'radial-gradient(circle, #FCD535 0%, #F3BA2F 100%)',
-            boxShadow: '0 0 80px rgba(243, 186, 47, 0.5)',
-            marginBottom: 40,
+            background: 'rgba(26, 29, 31, 0.5)',
+            border: '2px solid rgba(243, 186, 47, 0.2)',
+            boxShadow: '0 0 40px rgba(243, 186, 47, 0.3)',
+            marginBottom: 30,
           }}
         >
           <div
             style={{
-              fontSize: 64,
+              width: 120,
+              height: 120,
+              borderRadius: '50%',
+              background: 'linear-gradient(135deg, #FCD535 0%, #F3BA2F 100%)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: 40,
               fontWeight: 'bold',
               color: '#0B0E11',
-              letterSpacing: '-2px',
             }}
           >
             BNB
@@ -64,11 +84,12 @@ export async function GET() {
         {/* Company Name */}
         <div
           style={{
-            fontSize: 60,
+            fontSize: 48,
             fontWeight: 'bold',
-            color: '#F3BA2F',
-            marginBottom: 20,
-            textAlign: 'center',
+            background: 'linear-gradient(to right, #F3BA2F, #FCD535)',
+            backgroundClip: 'text',
+            color: 'transparent',
+            marginBottom: 12,
           }}
         >
           Build and Build Co
@@ -77,13 +98,49 @@ export async function GET() {
         {/* Tagline */}
         <div
           style={{
-            fontSize: 32,
+            fontSize: 24,
             color: '#F0F0F0',
-            opacity: 0.9,
-            textAlign: 'center',
+            opacity: 0.8,
+            marginBottom: 40,
           }}
         >
-          BNB Access for US Investors
+          Providing institutional-grade access to Binance Smart Chain
+        </div>
+        
+        {/* BNB Stats */}
+        <div
+          style={{
+            display: 'flex',
+            gap: 60,
+            marginTop: 20,
+          }}
+        >
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: 32, fontWeight: 'bold', color: '#F3BA2F' }}>
+              {bnbPrice}
+            </div>
+            <div style={{ fontSize: 14, color: '#9CA3AF', marginTop: 4 }}>
+              BNB Price (USD)
+            </div>
+          </div>
+          
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: 32, fontWeight: 'bold', color: '#F3BA2F' }}>
+              {marketCap}
+            </div>
+            <div style={{ fontSize: 14, color: '#9CA3AF', marginTop: 4 }}>
+              BNB Market Cap
+            </div>
+          </div>
+          
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: 32, fontWeight: 'bold', color: '#F3BA2F' }}>
+              {volume24h}
+            </div>
+            <div style={{ fontSize: 14, color: '#9CA3AF', marginTop: 4 }}>
+              24h Volume (USD)
+            </div>
+          </div>
         </div>
       </div>
     ),
