@@ -75,9 +75,13 @@ export default function Navigation() {
             ))}
           </div>
           
-          <button className="hidden md:block px-6 py-2 bg-bsc-yellow text-bsc-dark font-semibold rounded-lg hover:bg-bsc-yellow-bright transition-colors duration-200">
-            Get Started
-          </button>
+          <a
+            href="#contact"
+            onClick={(e) => handleClick(e, "#contact")}
+            className="hidden md:block px-6 py-2 bg-bsc-yellow text-bsc-dark font-semibold rounded-lg hover:bg-bsc-yellow-bright transition-colors duration-200"
+          >
+            Contact Us
+          </a>
           
           <button className="md:hidden text-gray-300">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
