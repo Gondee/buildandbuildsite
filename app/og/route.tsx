@@ -3,22 +3,10 @@ import { ImageResponse } from 'next/og';
 export const runtime = 'edge';
 
 export async function GET() {
-  // Fetch current BNB stats
-  let bnbPrice = '$723.45';
-  let marketCap = '$112.5B';
-  let volume24h = '$1.8B';
-  
-  try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'https://buildandbuildsite.vercel.app'}/api/bnb-stats`);
-    if (response.ok) {
-      const data = await response.json();
-      bnbPrice = `$${data.price.toFixed(2)}`;
-      marketCap = data.marketCap >= 1e9 ? `$${(data.marketCap / 1e9).toFixed(1)}B` : `$${(data.marketCap / 1e6).toFixed(1)}M`;
-      volume24h = data.volume24h >= 1e9 ? `$${(data.volume24h / 1e9).toFixed(1)}B` : `$${(data.volume24h / 1e6).toFixed(1)}M`;
-    }
-  } catch (error) {
-    // Use default values if fetch fails
-  }
+  // Use static values for now to ensure it works
+  const bnbPrice = '$723.45';
+  const marketCap = '$112.5B';
+  const volume24h = '$1.8B';
 
   return new ImageResponse(
     (
@@ -86,9 +74,7 @@ export async function GET() {
           style={{
             fontSize: 48,
             fontWeight: 'bold',
-            background: 'linear-gradient(to right, #F3BA2F, #FCD535)',
-            backgroundClip: 'text',
-            color: 'transparent',
+            color: '#F3BA2F',
             marginBottom: 12,
           }}
         >
