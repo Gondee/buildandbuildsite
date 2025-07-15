@@ -4,8 +4,14 @@ const CMC_API_KEY = process.env.CMC_API_KEY || '';
 const CMC_API_URL = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest';
 const CACHE_DURATION = 10 * 60 * 1000; // 10 minutes in milliseconds
 
+interface CacheData {
+  price: number;
+  marketCap: number;
+  volume24h: number;
+}
+
 let cache: {
-  data: any;
+  data: CacheData;
   timestamp: number;
 } | null = null;
 
