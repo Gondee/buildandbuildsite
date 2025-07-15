@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-const CMC_API_KEY = 'b03f3250-9af5-4735-843d-ead99f75e1c7';
+const CMC_API_KEY = process.env.CMC_API_KEY || '';
 const CMC_API_URL = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest';
 
 export async function GET() {
