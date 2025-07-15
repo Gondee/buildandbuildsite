@@ -38,12 +38,18 @@ export default function Hero() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up animation-delay-400">
-            <button className="px-8 py-4 bg-bsc-yellow text-bsc-dark font-semibold rounded-lg hover:bg-bsc-yellow-bright transition-all duration-200 transform hover:scale-105">
-              Get Started
-            </button>
-            <button className="px-8 py-4 glass-effect text-white font-semibold rounded-lg hover:bg-bsc-surface transition-all duration-200">
+            <a 
+              href="#contact"
+              className="px-8 py-4 bg-bsc-yellow text-bsc-dark font-semibold rounded-lg hover:bg-bsc-yellow-bright transition-all duration-200 transform hover:scale-105 text-center"
+            >
+              Contact Us
+            </a>
+            <a 
+              href="#team"
+              className="px-8 py-4 glass-effect text-white font-semibold rounded-lg hover:bg-bsc-surface transition-all duration-200 text-center"
+            >
               Learn More
-            </button>
+            </a>
           </div>
           
           <BNBStats />
