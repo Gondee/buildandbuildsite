@@ -20,7 +20,7 @@ const teamMembers: TeamMember[] = [
       "CFA Charterholder, FINRA Series 7, 24, 66",
       "Triple major in Accounting, Finance, and Entrepreneurship from University of Arizona Eller School of Business"
     ],
-    image: "/team/patrick.jpg"
+    image: "/team/patrick.png"
   },
   {
     name: "Joshua Kruger",
@@ -34,7 +34,7 @@ const teamMembers: TeamMember[] = [
       "Co-Founder of Kruger Pasch Capital (2017) - Hedge Fund strategy focused on algorithmic funding strategies denominated in Bitcoin",
       "B.S., Computer Science, Texas A&M University; specialization in Cybersecurity"
     ],
-    image: "/team/joshua.jpg"
+    image: "/team/Josh.png"
   },
   {
     name: "Johnathan Pasch",
@@ -48,7 +48,7 @@ const teamMembers: TeamMember[] = [
       "Bachelor's Degree in Computer Science from Texas A&M University",
       "Masters Program: Systems&Systems Analysis Military Applications Course. Army Logistics University"
     ],
-    image: "/team/johnathan.jpg"
+    image: "/team/jr.png"
   },
   {
     name: "James Haft",
@@ -64,7 +64,7 @@ const teamMembers: TeamMember[] = [
       "Co-founder of CryptoMondays, one of the largest and best known global meetups for Cryptocurrencies and DLT globally",
       "AB in Economics from Vassar College. JD/MBA from Emory University"
     ],
-    image: "/team/james.jpg"
+    image: "/team/james.png"
   }
 ];
 
@@ -97,7 +97,8 @@ export default function Team() {
                         src={member.image}
                         alt={member.name}
                         fill
-                        className="object-cover"
+                        className="object-cover object-center"
+                        sizes="(max-width: 768px) 96px, 96px"
                       />
                     </div>
                   </div>
