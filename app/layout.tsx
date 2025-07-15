@@ -20,6 +20,21 @@ export const metadata: Metadata = {
     title: "Build and Build Co - BNB Access for US Investors",
     description: "Institutional-grade access to Binance Smart Chain in the United States",
     type: "website",
+    images: [
+      {
+        url: "/bnb-logo.svg",
+        width: 1200,
+        height: 630,
+        alt: "Build and Build Co - BNB Logo",
+      }
+    ],
+    siteName: "Build and Build Co",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Build and Build Co - BNB Access for US Investors",
+    description: "Institutional-grade access to Binance Smart Chain in the United States",
+    images: ["/bnb-logo.svg"],
   },
 };
 
