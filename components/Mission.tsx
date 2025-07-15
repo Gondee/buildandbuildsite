@@ -29,7 +29,7 @@ export default function Mission() {
                   Accessibility
                 </h4>
                 <p className="text-gray-400 leading-relaxed">
-                  Breaking down barriers to entry for institutional and accredited investors seeking exposure to BNB 
+                  Breaking down barriers to entry for institutional and accredited investors seeking investments in BNB 
                   and BSC ecosystem tokens within US regulatory frameworks.
                 </p>
               </div>

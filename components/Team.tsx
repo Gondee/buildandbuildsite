@@ -30,7 +30,6 @@ const teamMembers: TeamMember[] = [
       "Lead Architect, Tokenomics & Game Theory, Tea Protocol (2023); protocol incentive design alongside Max Howell, optimizing decentralized open-source contribution networks",
       "Founder, Fractal Ventures (2022); strategic advisory for early-stage digital asset protocols in token design, capital formation, and product architecture",
       "Co-Founder of OnChain Alpha (2020) - Hedge Fund focused on Delta Neutral Decentralized Finance alpha opportunities. Acquired by Coral Capital in 2022",
-      "Co-founded the hedge fund Kruger Pasch Capital LLC (2017) and OnChain Alpha (2021)",
       "Co-Founder of Kruger Pasch Capital (2017) - Hedge Fund strategy focused on algorithmic funding strategies denominated in Bitcoin",
       "B.S., Computer Science, Texas A&M University; specialization in Cybersecurity"
     ],
@@ -97,7 +96,7 @@ export default function Team() {
                         src={member.image}
                         alt={member.name}
                         fill
-                        className="object-cover object-center"
+                        className={`object-cover ${member.name.includes('Patrick') ? 'object-[center_35%]' : 'object-center'}`}
                         sizes="(max-width: 768px) 96px, 96px"
                       />
                     </div>

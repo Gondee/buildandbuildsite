@@ -25,7 +25,7 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2024 Build and Build Co. All rights reserved.
+              © 2025 Build and Build Co. All rights reserved.
             </div>
             <div className="flex space-x-6">
               <a href="#" className="text-gray-400 hover:text-bsc-yellow transition-colors text-sm">
