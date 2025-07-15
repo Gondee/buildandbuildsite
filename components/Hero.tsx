@@ -1,6 +1,7 @@
 
 "use client";
 
+import Image from "next/image";
 import BNBStats from "./BNBStats";
 
 export default function Hero() {
@@ -10,21 +11,13 @@ export default function Hero() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-8 animate-fade-in">
             <div className="inline-block p-8 rounded-full bg-bsc-surface/30 backdrop-blur-sm border border-bsc-yellow/20 glow-yellow">
-              <svg 
-                width="80" 
-                height="80" 
-                viewBox="0 0 80 80" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg"
+              <Image
+                src="/buildandbuild_logo-removebg-preview.png"
+                alt="Build and Build Logo"
+                width={200}
+                height={200}
                 className="animate-pulse-slow"
-              >
-                <path 
-                  d="M40 0L49.2705 27.6393H78.5317L55.6306 44.7214L64.9011 72.3607L40 55.2786L15.0989 72.3607L24.3694 44.7214L1.46828 27.6393H30.7295L40 0Z" 
-                  fill="#F3BA2F"
-                />
-                <circle cx="40" cy="40" r="25" fill="#FCD535" opacity="0.8"/>
-                <text x="40" y="47" textAnchor="middle" className="text-bsc-dark font-bold text-lg">BNB</text>
-              </svg>
+              />
             </div>
           </div>
           
