@@ -1,4 +1,8 @@
 
+import dynamic from "next/dynamic";
+
+const BNBStats = dynamic(() => import("./BNBStats"), { ssr: false });
+
 export default function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative pt-20">
@@ -42,20 +46,7 @@ export default function Hero() {
             </button>
           </div>
           
-          <div className="mt-16 grid grid-cols-3 gap-8 text-center animate-fade-in animation-delay-600">
-            <div>
-              <div className="text-3xl font-bold text-bsc-yellow">$50B+</div>
-              <div className="text-gray-400 text-sm">TVL Secured</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-bsc-yellow">100%</div>
-              <div className="text-gray-400 text-sm">Compliant</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-bsc-yellow">24/7</div>
-              <div className="text-gray-400 text-sm">Support</div>
-            </div>
-          </div>
+          <BNBStats />
         </div>
       </div>
       
