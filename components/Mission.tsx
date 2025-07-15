@@ -70,7 +70,7 @@ export default function Mission() {
 
             <div className="text-center mt-12">
               <blockquote className="text-2xl font-light text-gray-300 italic">
-                "Building bridges between traditional finance and the future of decentralized innovation"
+                &ldquo;Building bridges between traditional finance and the future of decentralized innovation&rdquo;
               </blockquote>
               <p className="text-bsc-yellow mt-4 font-semibold">- Build and Build Co</p>
             </div>
