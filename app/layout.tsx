@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://buildandbuildsite.vercel.app'),
   title: "Build and Build Co - BNB Access for US Investors",
   description: "Providing institutional-grade access to Binance Smart Chain (BNB) in the United States through fully compliant investment vehicles.",
   keywords: "BNB, Binance Smart Chain, BSC, cryptocurrency, investment, United States, compliant, institutional",
