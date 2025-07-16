@@ -89,7 +89,9 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Email</p>
-                    <p className="text-white">info@buildandbuild.co</p>
+                    <a href="mailto:info@buildandbuild.co" className="text-white hover:text-bsc-yellow transition-colors">
+                      info@buildandbuild.co
+                    </a>
                   </div>
                 </div>
 
@@ -128,7 +130,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Business Hours</p>
-                    <p className="text-white">24/7 Support Available</p>
+                    <p className="text-white">8:00 AM - 5:00 PM (M-F)</p>
                   </div>
                 </div>
               </div>
